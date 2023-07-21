@@ -1,0 +1,68 @@
+file '/myfile' do
+content 'Welcome to Technical Guftgu'
+action :create
+end
+
+*********
+
+
+package 'tree' do
+action :install
+end
+
+file '/myfile2' do
+content 'This is My Second Project code'
+action :create
+owner 'root'
+group 'root'
+end
+
+*********
+package 'httpd' do
+action :install
+end
+
+
+
+file '/var/www/html/index.html' do
+content 'Welcome to Technical Guftgu'
+action :create
+end
+
+
+service 'httpd' do
+action [:enable, :start]
+end
+
+
+*********chef attribute
+file '/basicinfo' do
+ content "This is to get Attributes
+ HOSTNAME: #{node['hostname']}
+ IPADDRESS: #{node['ipaddress']}
+ CPU: #{node['cpu']['total']}
+ MEMORY: #{node['memory']['total']}"
+ owner 'root'
+ group 'root'
+action :create
+end
+
+
+--------------------------------------------------------------------
+connect chef workstation with server
+go to manage.server.io 
+create an account and create organization then ther is a starter pack to download
+download starter pack this will download on your local mavhine unzip them there is a folder chef-repo drag thsi folder to aws linux through winscp software
+and chef-repo is located on your aws linux machine and your workstation is connected with the chef-server
+to check our workstation is connected eith server gtypw command  "knife ssl check"
+
+NOW CONNECT NODE WITH SERVER 
+create a node in aws ec2 instance
+then go to your workstation and write command 
+"knife bootstrap [private-ip of node which you are connected with server] --ssh-user ec2-user --sudo -i nodekey.pem -N node"
+hit enter and your node is connected with your server
+
+to checlypur node is connected wth server type command "knife node list" 
+  
+
+

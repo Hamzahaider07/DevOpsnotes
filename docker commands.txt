@@ -1,0 +1,46 @@
+DOCKER is an open source platform to create contrization. it is a light weight bacause it is aos level virulization they cant need prealocated hardware and specifoc os like  VM do.
+
+DOCKER COMMANDS:
+
+TO SEE ALL DOCKER IMAGES LOCALLY
+docker images
+
+to search image from dockerhub
+ 
+docker search imagename
+
+to download image from dockerhub
+
+docker pull image name
+
+to start and run the image to create container
+
+docker run -it image name /bin/bash
+
+to name the docker container
+
+docker run -it --name container name image name /bin/bash
+
+ check/start/stop docker engine status
+
+service docker status
+service docker start
+serbice docker stop
+
+to start/stop container
+
+docker start container name
+docker stop container name
+
+to see all containers in local
+
+docker ps
+
+to see only running container
+
+docker ps -a
+
+delete container
+
+docker rm container name
+ 
