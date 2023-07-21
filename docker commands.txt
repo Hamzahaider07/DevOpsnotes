@@ -32,6 +32,10 @@ to start/stop container
 docker start container name
 docker stop container name
 
+to get into container
+
+docker attach container name
+
 to see all containers in local
 
 docker ps
